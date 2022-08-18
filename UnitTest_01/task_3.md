@@ -24,3 +24,5 @@
 3. Create unit tests to cover all conditions.
 
 4. Use ```[DataRow]``` attribute to use different parameters in the same tests. 
+
+5. Refactor your code to use external ```DateTimeProvider``` in order to check the last visited date in izolation.
