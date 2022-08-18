@@ -14,7 +14,7 @@
     }
 ```
 
-2. Create tests for the following conditions:
+2. Create tests for the following conditions for the products' prices calculator:
 
 - When a sum of the products' prices is higher than 200$ then a 10 percentage discount should be added to the sum.
 - When a sum of the products' prices is higher than 400$ then a 20 percentage discount should be added to the sum.
