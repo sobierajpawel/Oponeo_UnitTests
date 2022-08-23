@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./UnitTest_01/SDAOponeo.UnitTests/SDAOponeo.UnitTests.sln
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore ./UnitTest_01/SDAOponeo.UnitTests/SDAOponeo.UnitTests.sln
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal ./UnitTest_01/SDAOponeo.UnitTests/SDAOponeo.UnitTests.sln
