@@ -11,7 +11,7 @@ namespace SDAOponeo.UnitTests.ImplementationModule.Calculators
         private const double FIRST_PERCENTAGE_LEVEL = 0.1;
         private const double SECOND_PERCENTAGE_LEVEL = 0.2;
 
-        public double GetPrice(IEnumerable<Product> products) 
+        public virtual double GetPrice(IEnumerable<Product> products) 
         {
             if (products == null)
                 throw new ArgumentNullException(nameof(products));
