@@ -68,7 +68,9 @@ namespace SDAOponeo.UnitTests.Tests.Orders
 
             //Assert
             Assert.AreEqual(resultOnce.NetTotal, totalPrice - 50d);
-            Assert.AreEqual(resultTwo.NetTotal, totalPrice);    
+            Assert.AreEqual(resultTwo.NetTotal, totalPrice);
+
+            orderValidatorMock.Verify(x => x.Validate(It.IsAny<Order>()), Times.Exactly(2));
         }
     }
 }
