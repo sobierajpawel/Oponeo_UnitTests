@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDAOponeo.UnitTests.ImplementationModule", "SDAOponeo.UnitTests.ImplementationModule\SDAOponeo.UnitTests.ImplementationModule.csproj", "{D64A0C25-5CBC-49B0-ACF9-4ACE69FF25AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDAOponeo.UnitTests.ImplementationModule", "SDAOponeo.UnitTests.ImplementationModule\SDAOponeo.UnitTests.ImplementationModule.csproj", "{D64A0C25-5CBC-49B0-ACF9-4ACE69FF25AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDAOponeo.UnitTests.Tests", "SDAOponeo.UnitTests.Tests\SDAOponeo.UnitTests.Tests.csproj", "{0764C14D-B305-4942-885A-43F61C49F824}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDAOponeo.UnitTests.Tests", "SDAOponeo.UnitTests.Tests\SDAOponeo.UnitTests.Tests.csproj", "{0764C14D-B305-4942-885A-43F61C49F824}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDAOponeo.UnitTests.NSubstituteTests", "SDAOponeo.UnitTests.NSubstituteTests\SDAOponeo.UnitTests.NSubstituteTests.csproj", "{80861A34-8BB0-4317-80E2-4C02DECD167C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{0764C14D-B305-4942-885A-43F61C49F824}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0764C14D-B305-4942-885A-43F61C49F824}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0764C14D-B305-4942-885A-43F61C49F824}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80861A34-8BB0-4317-80E2-4C02DECD167C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80861A34-8BB0-4317-80E2-4C02DECD167C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80861A34-8BB0-4317-80E2-4C02DECD167C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80861A34-8BB0-4317-80E2-4C02DECD167C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

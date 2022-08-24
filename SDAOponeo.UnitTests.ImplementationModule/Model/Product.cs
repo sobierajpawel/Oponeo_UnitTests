@@ -2,9 +2,9 @@
 {
     public class Product
     {
-        public string Name { get; set; }
-        public double TotalPrice => UnitPrice * Quantity;
-        public double UnitPrice { get; set; }
-        public double Quantity { get; set; }
+        public virtual string Name { get; set; }
+        public virtual double TotalPrice => UnitPrice * Quantity;
+        public virtual double UnitPrice { get; set; }
+        public virtual double Quantity { get; set; }
     }
 }
