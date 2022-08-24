@@ -194,7 +194,7 @@ public interface IOrderValidator
 ```
 8. Create `MS Test Library project` name it Oponeo.Orders.UnitTests.Moq
 
-9. Writes tests using `Moq` which covers all scenarious including:
+9. Writes tests using `Moq` which covers all scenarious in `OrderProcessor` class including:
 
 - using the same discount code twice (it should be available only once, use `fake` class to do that
 - creating object when a one of the parameters and you expect exception
