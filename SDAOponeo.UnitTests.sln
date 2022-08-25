@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDAOponeo.UnitTests.NSubsti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDAOponeo.UnitTests.NUnit", "SDAOponeo.UnitTests.NUnit\SDAOponeo.UnitTests.NUnit.csproj", "{26F9A83A-F30E-4EAC-BC9D-02EEC740658B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDAOponeo.UnitTests.xUnit", "SDAOponeo.UnitTests.xUnit\SDAOponeo.UnitTests.xUnit.csproj", "{B89F6076-EAB4-4E96-A561-42EF3E88EB11}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{26F9A83A-F30E-4EAC-BC9D-02EEC740658B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26F9A83A-F30E-4EAC-BC9D-02EEC740658B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26F9A83A-F30E-4EAC-BC9D-02EEC740658B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B89F6076-EAB4-4E96-A561-42EF3E88EB11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B89F6076-EAB4-4E96-A561-42EF3E88EB11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B89F6076-EAB4-4E96-A561-42EF3E88EB11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B89F6076-EAB4-4E96-A561-42EF3E88EB11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
