@@ -1,26 +1,24 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using NUnit.Framework;
 using SDAOponeo.UnitTests.ImplementationModule.Calculators;
 using SDAOponeo.UnitTests.ImplementationModule.Model;
 using SDAOponeo.UnitTests.ImplementationModule.Orders;
-using Shouldly;
 using System;
+using Shouldly;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SDAOponeo.UnitTests.Tests.Orders
+namespace SDAOponeo.UnitTests.NUnit
 {
-    [TestClass]
-    public class OrderProcessorTests
+    [TestFixture]
+    [Category("NUnitTests")]
+    public class Tests
     {
         private Order? order;
         private readonly string testedDiscountCode = "FDFDT$23";
         private Mock<ProductPriceCalculator>? mockedProductPriceCalculator;
 
-        [TestInitialize]
-        public void Initialize()
+        [SetUp]
+        public void Setup()
         {
             order = new Order
             {
@@ -32,60 +30,59 @@ namespace SDAOponeo.UnitTests.Tests.Orders
             mockedProductPriceCalculator = new Mock<ProductPriceCalculator>();
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [Test]
+
         public void Should_Throw_Argument_Exception_When_ProductPriceCalculator_Is_Null()
         {
             //Arrange
             var orderValidatorMock = new Mock<IOrderValidator>();
             var discountServiceMock = new Mock<IDiscountCodeService>();
 
-            var orderProcessor = new OrderProcessor(null, orderValidatorMock.Object, discountServiceMock.Object);
+            Assert.Throws<ArgumentNullException>(() => new OrderProcessor(null, orderValidatorMock.Object, discountServiceMock.Object));
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [Test]
         public void Should_Throw_Argument_Exception_When_OrderValidator_Is_Null()
         {
             //Arrange
             var discountServiceMock = new Mock<IDiscountCodeService>();
             var priceCalculatorMock = new Mock<ProductPriceCalculator>();
 
-            var orderProcessor = new OrderProcessor(priceCalculatorMock.Object, null, discountServiceMock.Object);
+            Assert.Throws<ArgumentNullException>(() => new OrderProcessor(priceCalculatorMock.Object, null, discountServiceMock.Object));
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [Test]
         public void Should_Throw_Argument_Exception_When_DiscountService_Is_Null()
         {
             //Arrange
             var orderValidatorMock = new Mock<IOrderValidator>();
             var priceCalculatorMock = new Mock<ProductPriceCalculator>();
 
-            var orderProcessor = new OrderProcessor(priceCalculatorMock.Object, orderValidatorMock.Object, null);
+            Assert.Throws<ArgumentNullException>(() => new OrderProcessor(priceCalculatorMock.Object, orderValidatorMock.Object, null));
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
+        [Test]
         public void Should_Throw_Argument_Exception_When_Validation_Result_Is_False()
         {
             //Arrange
-            var orderValidatorMock = new Mock<IOrderValidator>();    
+            var orderValidatorMock = new Mock<IOrderValidator>();
             var discountService = new FakeCodesService();
 
-            orderValidatorMock.Setup(x=>x.Validate(It.IsAny<Order>())).Returns(false);
+            orderValidatorMock.Setup(x => x.Validate(It.IsAny<Order>())).Returns(false);
             var orderProcessor = new OrderProcessor(mockedProductPriceCalculator.Object, orderValidatorMock.Object, discountService);
 
             //Act
-            var result = orderProcessor.ProcessOrder(order);
+            var result = 
+            Assert.Throws<ArgumentException>(()=>orderProcessor.ProcessOrder(order));
         }
 
-        [TestMethod]
+        [Test]
         public void Should_Return_The_Same_Price_When_Discount_Code_Is_Not_Given()
         {
             //Arrange
             var orderValidatorMock = new Mock<IOrderValidator>();
             var discountService = new FakeCodesService();
+            var testedTotal = 50d;
 
             mockedProductPriceCalculator.Setup(x => x.GetPrice(It.IsAny<IEnumerable<Product>>())).Returns(100d);
             orderValidatorMock.Setup(x => x.Validate(It.IsAny<Order>())).Returns(true);
@@ -98,16 +95,16 @@ namespace SDAOponeo.UnitTests.Tests.Orders
             result.NetTotal.ShouldBe(100d);
 
             orderValidatorMock.Verify(x => x.Validate(It.IsAny<Order>()), Times.Once);
-            mockedProductPriceCalculator.Verify(x=>x.GetPrice(It.IsAny<IEnumerable<Product>>()), Times.Once);
+            mockedProductPriceCalculator.Verify(x => x.GetPrice(It.IsAny<IEnumerable<Product>>()), Times.Once);
         }
 
-        [TestMethod]
+        [Test]
         public void Should_Not_Allow_To_Use_The_Same_Discount_Code_Twice()
         {
             //Arrange
             var orderValidatorMock = new Mock<IOrderValidator>();
             var discountService = new FakeCodesService();
-           
+
             var totalPrice = 100d;
             discountService.AddCode(testedDiscountCode);
 
