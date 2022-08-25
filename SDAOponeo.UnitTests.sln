@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDAOponeo.UnitTests.NUnit",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDAOponeo.UnitTests.xUnit", "SDAOponeo.UnitTests.xUnit\SDAOponeo.UnitTests.xUnit.csproj", "{B89F6076-EAB4-4E96-A561-42EF3E88EB11}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDAOponeo.UnitTests.Benchmark", "SDAOponeo.UnitTests.Benchmark\SDAOponeo.UnitTests.Benchmark.csproj", "{FFA4558B-DFC0-4DD9-B685-5524141CA49D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B89F6076-EAB4-4E96-A561-42EF3E88EB11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B89F6076-EAB4-4E96-A561-42EF3E88EB11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B89F6076-EAB4-4E96-A561-42EF3E88EB11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFA4558B-DFC0-4DD9-B685-5524141CA49D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFA4558B-DFC0-4DD9-B685-5524141CA49D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFA4558B-DFC0-4DD9-B685-5524141CA49D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFA4558B-DFC0-4DD9-B685-5524141CA49D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
