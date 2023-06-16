@@ -1,6 +1,6 @@
 ## Task 3
 
-### Using DataRow in MSTest
+### Using DataRow and DateTime Provider in MSTest
 
 1. Create ```PriceCalculator``` which calculate price with added discount depending on a few conditions.
 
