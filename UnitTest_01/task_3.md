@@ -1,7 +1,7 @@
 ## Task 3
 
 ### Using DataRow in MSTest
-
+ 
 1. Create ```PriceCalculator``` which calculate price with added discount depending on a few conditions.
 
  - When a customer is older than 65 then a price should be lowered by 30%
