@@ -19,6 +19,7 @@
 - When a sum of the products' prices is higher than 200$ then a 10 percentage discount should be added to the sum.
 - When a sum of the products' prices is higher than 400$ then a 20 percentage discount should be added to the sum.
 - When a customer ordered more than 10 quantity of the same product, add a 10 percentage discount only to the sum of prices on a particular product.
+- Conditions are connected with each other
 
 3. Create implementations for the written tests.
 
